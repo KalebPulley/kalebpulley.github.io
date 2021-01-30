@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+    <html lang="en-US">
+        <head>
+            <title>Week 4 Add Two Numbers</title>
+            <meta charset="utf-8">
+            <link rel="stylesheet" href="/css/style.css">
+        </head>
+        <body>
+            <header>
+                <h1>Week 4 Add Two Numbers</h1>
+                <h2>Kaleb Pulley</h2>
+            </header>
+            <main>
+                <h3>Add Two Numbers</h3>
+                <label>Enter Number One: <input type="text" id="number1"></label>
+              <label>Enter Number Two: <input type="text" id="number2"></label>
+                <label><button onclick="addNumbers()">Add Numbers</button></label>
+                <hr>
+                <p><span id="output"></span></p>
+            </main>
+            <footer>
+            
+                &copy;2021 &bull; Kaleb Pulley &bull; BYU-Idaho &bull; CIT 160
+            </footer>
+            <script>
+                function addNumbers() {
+                    //get the first number and asign it to a constant variable.
+                    let number1=document.getElementById('number1').value;
+                    //Parse the variable so it is a float nstead of a string.
+                    number1 = parseFloat(number1);
+                    //get the second number and asign it to a constant variable.
+                    let number2=document.getElementById('number2').value;
+                    //Parse the variable so it is a float nstead of a string.
+                    number2=parseFloat(number2);
+                    //create a new variable with the added values.
+                    const addedNumbers = number1 + number2;
+                    //Return the added values to the output parpagraph.
+                    document.getElementById('output').innerHTML = addedNumbers;
+                }
+            </script>
+        </body>
+    </html>
