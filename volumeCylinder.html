@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<!--create two input fields that ask for the regular one for hight and one for over radius.-->
+    <html lang="en-US">
+        <head>
+            <title>Calculate the Volume of a Cylinder</title>
+            <meta charset="utf-8">
+            
+        </head>
+        <body>
+            <header>
+                <h1>Calculate the Volume of a Cylinder</h1>
+                <h2>Kaleb Pulley</h2>
+            </header>
+            <main>
+                
+                <label>Enter Hight: <input type="text" id="hight"></label>
+              <label>Enter Radius: <input type="text" id="radius"></label>
+                <label><button onclick="calculateVolume()">Calculate volume</button></label>
+                <hr>
+                <p><span id="output"></span></p>
+            </main>
+            <footer>
+            
+                &copy;2021 &bull; Kaleb Pulley &bull; BYU-Idaho &bull; CIT 160
+            </footer>
+            <script>
+                function calculateVolume() {
+                    /* Input: get the integer form of the hight and the radius and store them in variables
+                        Computation: multiply pi by the squared radius and then multiply by the hight store the result in a variable rounded to a whole number.
+                        Output: return the results to the output paragraph.
+                    */
+                    //get the normal hours and asign it to a variable.
+                    let hight=document.getElementById('hight').value;
+                    //Parse the variable so it is a float instead of a string.
+                    hight = parseFloat(hight);
+                    //get the radius and asign it to a variable.
+                    let radius=document.getElementById('radius').value;
+                    //Parse the variable so it is a float instead of a string.
+                    radius=parseFloat(radius);
+                    //create a new variable with the computed values.
+                    let volume = Math.PI * radius * radius * hight;
+                    let digits = 0;
+                    let multiplier = Math.pow(10, digits);
+                    volume = Math.round(volume * multiplier) / multiplier;
+                    //Return the added computed to the output parpagraph.
+                    document.getElementById('output').innerHTML = "Volume: " + volume;
+                }
+            </script>
+        </body>
+    </html>

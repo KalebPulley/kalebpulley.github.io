@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+    <html lang="en-US">
+        <head>
+            <title>Week 6 - Simple calculator</title>
+            <meta charset="utf-8">
+            <link rel="stylesheet" href="/css/style.css">
+        </head>
+        <body>
+            <header>
+                <h1>Week 6 - Simple calculator</h1>
+                <h2>Kaleb Pulley</h2>
+            </header>
+            <main>
+                <h3>Test Your Math Skills</h3>
+                <p>If you divide round your answer to the first decimal.</p>
+                <label>Enter a Number: <input type="text" id="firstNumber"></label>
+                <label>Enter an Operator: <select type="text" id="operator">
+                    <option value="+">+</option>
+                    <option value="-">-</option>
+                    <option value="*">*</option>
+                    <option value="/">/</option>
+                </select></label>
+                <label>Enter another Number: <input type="text" id="sencondNumber"></label>
+                <label>Enter Your Answer: <input type="text" id="guess"></label>
+                <label><button onclick="simpleCalculator()">Check Your Answer</button></label>
+                <hr>
+                <p><span id="output"></span></p>
+            </main>
+            <footer>
+                &copy;2021 &bull; Kaleb Pulley &bull; BYU-Idaho &bull; CIT 160
+            </footer>
+            <script src="js/simpleCalculator.js"></script>
+        </body>
+    </html>

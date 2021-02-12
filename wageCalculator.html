@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<!--create two input fields that ask for the regular one for hours and one for over time hours.-->
+    <html lang="en-US">
+        <head>
+            <title>Calculate Wage</title>
+            <meta charset="utf-8">
+            
+        </head>
+        <body>
+            <header>
+                <h1>Calculate Wage</h1>
+                <h2>Kaleb Pulley</h2>
+            </header>
+            <main>
+                <label>Enter Normal Hours: <input type="text" id="normal"></label>
+              <label>Enter Over time hours: <input type="text" id="overtime"></label>
+                <label><button onclick="calculateHours()">Calculate Wage</button></label>
+                <hr>
+                <p><span id="output"></span></p>
+            </main>
+            <footer>
+            
+                &copy;2021 &bull; Kaleb Pulley &bull; BYU-Idaho &bull; CIT 160
+            </footer>
+            <script>
+                function calculateHours() {
+                    /* Input: get the integer form of normal and overtime hours and stor them in const variables
+                        Computation: multiply normal hours by 15 and overtime hours by 22.50 and stor result in a variable rounded to the second decimal.
+                        Output: return the results to the output paragraph.
+                    */
+                    //get the normal hours and asign it to a variable.
+                    let normal=document.getElementById('normal').value;
+                    //Parse the variable so it is a float nstead of a string.
+                    normal = parseFloat(normal);
+                    //get the overtime hours and asign it to a variable.
+                    let overtime=document.getElementById('overtime').value;
+                    //Parse the variable so it is a float nstead of a string.
+                    overtime=parseFloat(overtime);
+                    //create a new variable with the added values.
+                    let totalHours = normal * 15 + overtime * 22.50;
+                    //tax
+                    totalHours -= totalHours * 0.15
+                    let digits = 2;
+                    let multiplier = Math.pow(10, digits);
+                    totalHours = Math.round(totalHours * multiplier) / multiplier;
+                    //Return the added values to the output parpagraph.
+                    document.getElementById("output").innerHTML =  "\$"+ totalHours;
+                }
+            </script>
+        </body>
+    </html>
