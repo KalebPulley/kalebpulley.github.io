@@ -7,24 +7,24 @@ Output: if the guess is right return Correct! ğŸ† otherwise return Incorrect ğŸ
 function simpleCalculator() {
 
     //input in these 4 lines
-    const fisrtNumber = parseFloat(document.getElementById('firstNumber').value);
+    const Number1 = parseFloat(document.getElementById('firstNumber').value);
     let operator = document.getElementById('operator').value;
-    const sencondNumber = parseFloat(document.getElementById('sencondNumber').value);
+    const Number2 = parseFloat(document.getElementById('sencondNumber').value);
     const guess = parseFloat(document.getElementById('guess').value);
     //Computation check what the answer should be.
     let answer
     switch (operator) {
         case "+":
-            answer = fisrtNumber + sencondNumber;
+            answer = Number1 + Number2;
             break;
         case "-":
-            answer = fisrtNumber - sencondNumber;
+            answer = Number1 - Number2;
             break;
         case "*":
-            answer = fisrtNumber * sencondNumber;
+            answer = Number1 * Number2;
             break;
         case "/":
-            answer = fisrtNumber / sencondNumber;
+            answer = Number1 / Number2;
             let digits = 1;
             let multiplier = Math.pow(10, digits);
             answer = Math.round(answer * multiplier) / multiplier;
