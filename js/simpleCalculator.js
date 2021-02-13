@@ -7,9 +7,9 @@ Output: if the guess is right return Correct! ğŸ† otherwise return Incorrect ğŸ
 function simpleCalculator() {
 
     //input in these 4 lines
-    const Number1 = parseFloat(document.getElementById('firstNumber').value);
+    const Number1 = parseInt(document.getElementById('firstNumber').value);//I am casting to an integer to avoid the float problem I mentioned in the forum.
     let operator = document.getElementById('operator').value;
-    const Number2 = parseFloat(document.getElementById('sencondNumber').value);
+    const Number2 = parseInt(document.getElementById('sencondNumber').value);
     const guess = parseFloat(document.getElementById('guess').value);
     //Computation check what the answer should be.
     let answer
