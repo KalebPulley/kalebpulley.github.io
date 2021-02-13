@@ -1,8 +1,8 @@
 /*
-Input: get the values of the user's numbers operator and guess.
-Computation: compute the numbers acording to the operator using a switch statment.
-compare the answer with thier guess.
-Output: if the guess is right return Correct! 🏆 otherwise return Incorrect 😢
+Input: get the values of the user's numbers operator and guess.
+Computation: compute the numbers according to the operator using a switch statement.
+compare the answer with their guess.
+Output: if the guess is right return Correct! 🏆 otherwise return Incorrect 😢
 */
 function simpleCalculator() {
 

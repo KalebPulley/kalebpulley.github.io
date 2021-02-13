@@ -1,7 +1,7 @@
 /*
-Input: get the values of the user's weather selection.
-Computation: set variable output to the corosponding footwear.
-Output: return output.
+Input: get the values of the user's weather selection.
+Computation: set variable output to the corresponding footwear.
+Output: return output.
 */
 function footwear() {
 
