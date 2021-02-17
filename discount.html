@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+    <html lang="en-US">
+        <head>
+            <title>Week 7 - Discount calculator</title>
+            <meta charset="utf-8">
+            <link rel="stylesheet" href="/css/style.css">
+        </head>
+        <body>
+            <header>
+                <h1>Week 7 - Discount calculator</h1>
+                <h2>Kaleb Pulley</h2>
+            </header>
+            <main>
+                <h3>Find what your purchase will cost with the mid week discount.</h3>
+                <label>Enter the subtotal: <input type="text" id="subtotal"></label>
+                <label><button onclick="discount()">Caculate total</button></label>
+                <hr>
+                <p><span id="output"></span></p>
+            </main>
+            <footer>
+                &copy;2021 &bull; Kaleb Pulley &bull; BYU-Idaho &bull; CIT 160
+            </footer>
+            <script>
+                function discount() {
+                    //Input: get the subtotal from the the user inut and the date from the the Date().getday() function.
+                    var dayOfWeek = new Date().getDay();
+                    let total = parseFloat(document.getElementById('subtotal').value);
+                    //Computaion: check if it is the day is 2 or 3 and if the subtotal is greater than 50.
+                    //if it is multiply subtotal by .9
+                    //in all cases multiply the subtotal by 1.06
+                    if (total > 50 && (dayOfWeek == 2 || dayOfWeek == 3)) {
+                        total *= 0.9
+                    }
+                    let taxTotal = total * 1.06
+                    let digits = 2;
+                    let multiplier = Math.pow(10, digits);
+                    taxTotal = Math.round(taxTotal * multiplier) / multiplier;
+                    //Output: return the updated subtotal to the output paraghraph.
+                    document.getElementById('output').innerHTML = (new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(taxTotal));
+                }
+            </script>
+        </body>
+    </html>
