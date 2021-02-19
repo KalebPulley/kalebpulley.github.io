@@ -11,7 +11,7 @@
                 <h2>Kaleb Pulley</h2>
             </header>
             <main>
-                <h3>Find what your purchase will cost with the mid week discount.</h3>
+                <h3>Find what your purchase will cost with the midweek discount.</h3>
                 <label>Enter the subtotal: <input type="text" id="subtotal"></label>
                 <label><button onclick="discount()">Caculate total</button></label>
                 <hr>
@@ -32,10 +32,12 @@
                         total *= 0.9
                     }
                     let taxTotal = total * 1.06
+                    //I am rounding it after tax to be acurite.
                     let digits = 2;
                     let multiplier = Math.pow(10, digits);
                     taxTotal = Math.round(taxTotal * multiplier) / multiplier;
                     //Output: return the updated subtotal to the output paraghraph.
+                    //I wanted to output in USD format and this was a way I found to do that.
                     document.getElementById('output').innerHTML = (new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(taxTotal));
                 }
             </script>
