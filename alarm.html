@@ -25,10 +25,11 @@
                 var dayOfWeek = now.getDay();
                 let today = `${month}${dayOfMonth}`;
                 let message = "Get up!";
-                //computing: check if dayOfWeek is equal to 0(Sunday) or 6(Saturday) or if today is equal to 01(NewYearsDay), 64(July 4th), or 1125(Christmas)
+                //computing: check if dayOfWeek is equal to 0(Sunday) or 6(Saturday) or if today is equal to 01(NewYearsDay), 64(July 4th), or 1125(Christmas) set message to sleep in.
                 if ((dayOfWeek == 0 || dayOfWeek == 6) || (today == "01" || today == "64" || today == "1125")) {
                     message = "Sleep in.";
                 }
+                //Output: display the message in the output paragraph
                 document.getElementById("output").innerHTML = message;
             </script>
         </body>
