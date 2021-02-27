@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+    <html lang="en-US">
+        <head>
+            <title>Summ odd Numbers</title>
+            <meta charset="utf-8">
+            <link rel="stylesheet" href="/css/style.css">
+        </head>
+        <body>
+            <header>
+                <h1>Summ odd Numbers</h1>
+                <h2>Kaleb Pulley</h2>
+            </header>
+            <main>
+                <h3>Enter a Integer Greater than 1</h3>
+                <label><input type="text" id="number"></label>
+                <label><button onclick="find_odd()">Display Odd Numbers and Their Sum</button></label>
+                <hr>
+                <p><span id="output"></span></p>
+            </main>
+            <footer>
+                &copy;2021 &bull; Kaleb Pulley &bull; BYU-Idaho &bull; CIT 160
+            </footer>
+            <script>
+                    function find_odd() {
+                        //Input: get a number entered by the user.
+                        let last_num = parseInt(document.getElementById("number").value);
+                        let sum = 0;
+                        let message = "";
+                        //computing: check that the number is positive and greater then 1.
+                        //if true loop from one adding two each loop(for simplicity) ad each number less than the input to the sum variable and to a message for fun.
+                        //after finishing the loop and the value of sum to the end of the message.
+                        //if the input was not greater than one ask for it again.
+                        if (last_num > 1) {
+                            for (let i = 1; i <= last_num; i += 2) {
+                                message += i + ' + ';
+                                sum += i;
+                                }
+                            message = message.slice(0, -2) + `= ${sum}`;
+                        } else {
+                            message = "Please enter a positive integer greater than 1";
+                        }
+                        //Output: display the message to the output paragraph.
+                        document.getElementById('output').innerHTML = message
+                    }
+            </script>
+        </body>
+    </html>
