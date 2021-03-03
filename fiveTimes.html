@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+    <html lang="en-US">
+        <head>
+            <title>Week 9 - five Times Table</title>
+            <meta charset="utf-8">
+            <link rel="stylesheet" href="/css/style.css">
+        </head>
+        <body>
+            <header>
+                <h1>Week 9 - five Times Table</h1>
+                <h2>Kaleb Pulley</h2>
+            </header>
+            <main>
+                <h3>Five multipleid from 1 to 12</h3>
+                <p><span id="output"></span></p>
+            </main>
+            <footer>
+                &copy;2021 &bull; Kaleb Pulley &bull; BYU-Idaho &bull; CIT 160
+            </footer>
+            <script>
+                //input: none as the five times table will always be the same.
+                //computing: Use a for loop to iterate from one to twelve.
+                //on each iteration add the value of the iterator times 5 prseede by " 5 x (iterator) = "the message followed by a <br>
+                let message = ""
+                for (let i = 1; i <= 12; i++) {
+                    let value = i * 5;
+                    message += `5 X ${i} = ${value}<br>`;
+                }
+                //output: set the html in the output paragraph to the value of message
+                document.getElementById("output").innerHTML = message
+            </script>
+        </body>
+    </html>
