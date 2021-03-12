@@ -25,19 +25,24 @@
                 function windChill(tempF, speed) {
                     //input: temerature and wind speed in the paramiters
                     //computing: run the math to clculate the temparature with windchill
-                    return 35.74 + (0.6215 * tempF) - 35.75 * Math.pow(speed, 0.16) + 0.4275 * tempF * Math.pow(speed, 0.16);
+                    let chillFactor = 35.74 + (0.6215 * tempF) - 35.75 * Math.pow(speed, 0.16) + 0.4275 * tempF * Math.pow(speed, 0.16);
+                    //round for better reading
+                    let digits = 2;
+                    let multiplier = Math.pow(10, digits);
+                    chillFactor = Math.round(chillFactor * multiplier) / multiplier;
                     //output: return the result.
+                    return chillFactor
                 }
 
                 function doInputOutput(){
                     //input: temperature and wind speed from user
-                    let temperature = parseInt(document.getElementById("temperature").value);
-                    let windspeed = parseInt(document.getElementById("wind").value);
+                    let temperature = parseFloat(document.getElementById("temperature").value);
+                    let windspeed = parseFloat(document.getElementById("wind").value);
                     //computing: run windChill function if temperature is less than 50 and the windspeed is more than 3
                     if (temperature <= 50 && windspeed >= 3) {
                         let windchill = windChill(temperature, windspeed);
-                    //output: set the output div to the result of windChill
-                       document.getElementById("output").innerHTML = windchill;
+                    //output: set the output div to the result of windChill and add a little for a better look.
+                       document.getElementById("output").innerHTML = windchill + "℉";
                     } 
                 }
                 
