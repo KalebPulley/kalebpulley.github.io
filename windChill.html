@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+    <html lang="en-US">
+        <head>
+            <title>Week 10 - Wind Chill calculator</title>
+            <meta charset="utf-8">
+            <link rel="stylesheet" href="/css/style.css">
+        </head>
+        <body>
+            <header>
+                <h1>Week 10 - Wind Chill calculator</h1>
+                <h2>Kaleb Pulley</h2>
+            </header>
+            <main>
+                <h3>Wind Chill calculator</h3>
+                <label>Temperture: <input type="text" id="temperature"></label>
+                <label>Wind Speed: <input type="text" id="wind"></label>
+                <label><button onclick="doInputOutput()">Wind Chill</button></label>
+                <hr>
+                <p><span id="output"></span></p>
+            </main>
+            <footer>
+                &copy;2021 &bull; Kaleb Pulley &bull; BYU-Idaho &bull; CIT 160
+            </footer>
+            <script>
+                function windChill(tempF, speed) {
+                    //input: temerature and wind speed in the paramiters
+                    //computing: run the math to clculate the temparature with windchill
+                    return 35.74 + (0.6215 * tempF) - 35.75 * Math.pow(speed, 0.16) + 0.4275 * tempF * Math.pow(speed, 0.16);
+                    //output: return the result.
+                }
+
+                function doInputOutput(){
+                    //input: temperature and wind speed from user
+                    let temperature = parseInt(document.getElementById("temperature").value);
+                    let windspeed = parseInt(document.getElementById("wind").value);
+                    //computing: run windChill function if temperature is less than 50 and the windspeed is more than 3
+                    if (temperature <= 50 && windspeed >= 3) {
+                        let windchill = windChill(temperature, windspeed);
+                    //output: set the output div to the result of windChill
+                       document.getElementById("output").innerHTML = windchill;
+                    } 
+                }
+                
+            </script>
+        </body>
+    </html>
