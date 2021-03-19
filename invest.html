@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+    <html lang="en-US">
+        <head>
+            <title>Week 11 - Investment values</title>
+            <meta charset="utf-8">
+            <link rel="stylesheet" href="/css/style.css">
+        </head>
+        <body>
+            <header>
+                <h1>Week 11 - Investment values</h1>
+                <h2>Kaleb Pulley</h2>
+            </header>
+            <main>
+                <h3>find future values</h3>
+                <label>Amount Invested(priceple): <input type="text" id="amount"></label>
+                <label>Annual Rate: <input type="text" id="rate"></label>
+                <label>Number of Years: <input type="text" id="years"></label>
+                <label>Periods per Year: <input type="text" id="periods"></label>
+                
+                <label><button onclick="doFV()">Comput future value</button></label>
+                <hr>
+                <input type="text" id="output" readonly/>
+            </main>
+            <footer>
+                &copy;2021 &bull; Kaleb Pulley &bull; BYU-Idaho &bull; CIT 160
+            </footer>
+            <script>
+                //input: get th value of the four labels
+                //compute: call the computeFutureValue fuction with the correct information.
+                //output: display the result in the output label. 
+                function doFV () {
+                    let principal = parseFloat(document.getElementById("amount").value);
+                    let annualRate = parseFloat(document.getElementById("rate").value);
+                    let years = parseFloat(document.getElementById("years").value);
+                    let periodsPerYear = parseFloat(document.getElementById("periods").value);
+                    let result = computeFutureValue(principal, annualRate, years, periodsPerYear)
+                    document.getElementById("output").value = result
+                }
+                function computeFutureValue(principal, annualRate, years, periodsPerYear) {
+                //input: get the values from the peramiters
+                //compute: caculate the expected value.
+                //output: display the result in the output label. 
+                    let r = annualRate / periodsPerYear;
+                    let n = periodsPerYear * years
+                    let f = principal*((1 + r)**(n))
+                    return f
+                }
+            </script>
+        </body>
+    </html>

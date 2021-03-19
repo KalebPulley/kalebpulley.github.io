@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+    <html lang="en-US">
+        <head>
+            <title>Week 11 - Loan Calculator</title>
+            <meta charset="utf-8">
+            <link rel="stylesheet" href="/css/style.css">
+        </head>
+        <body>
+            <header>
+                <h1>Week 11 - Loan Calculator</h1>
+                <h2>Kaleb Pulley</h2>
+            </header>
+            <main>
+                <h3>Find Loan Payment or Balance</h3>
+                <label>Amount Invested(priceple): <input type="text" id="amount"></label>
+                <label>Annual Rate: <input type="text" id="rate"></label>
+                <label>Number of Years: <input type="text" id="years"></label>
+                <label>Periods per Year: <input type="text" id="periods"></label>
+                <label>Payment Made to Date: <input type="text" id="paymentToDate"></label>
+                <hr>
+                <label><button onclick="doPayment()">Comput Monthly Payment</button></label>
+                <input type="text" id="output1" readonly/>
+                <hr>
+                <label><button onclick="doBalance()">Comput Balance</button></label>
+                <input type="text" id="output2" readonly/>
+            </main>
+            <footer>
+                &copy;2021 &bull; Kaleb Pulley &bull; BYU-Idaho &bull; CIT 160
+            </footer>
+            <script>
+                //input: get the value of the four needed labels
+                //compute: call the computePayment fuction with the correct information.
+                //output: display the result in the output1 label. 
+                function doPayment () {
+                    let principal = parseFloat(document.getElementById("amount").value);
+                    let annualRate = parseFloat(document.getElementById("rate").value);
+                    let years = parseFloat(document.getElementById("years").value);
+                    let periodsPerYear = parseFloat(document.getElementById("periods").value);
+                    let result = computePayment(principal, annualRate, years, periodsPerYear)
+                    document.getElementById("output1").value = result.toFixed(2)
+                }
+                function doBalance (){
+                //input: get the value of the all needed labels
+                //compute: call the computeBalance fuction with the correct information.
+                //output: display the result in the output2 label. 
+                    let principal = parseFloat(document.getElementById("amount").value);
+                    let annualRate = parseFloat(document.getElementById("rate").value);
+                    let years = parseFloat(document.getElementById("years").value);
+                    let periodsPerYear = parseFloat(document.getElementById("periods").value);
+                    let paymentsMade = parseFloat(document.getElementById("paymentToDate").value);
+                    let result = computeBalance(principal, annualRate, years, periodsPerYear, paymentsMade)
+                    document.getElementById("output2").value = result.toFixed(2)
+                }
+                function computePayment (principal, annualRate, years, periodsPerYear) {
+                //input: get the values from the peramiters
+                //compute: caculate the monthly payment.
+                //output: display the result in the output label. 
+                    let r = annualRate / periodsPerYear;
+                    let n = periodsPerYear * years
+                    let a = principal
+                    let p = (a*r)/(1-(1 + r)**(n* (- 1)))
+                    return p
+                    
+                }
+                function computeBalance (principal, annualRate, years, periodsPerYear, numberOfPaymentPaidToDate){
+                //input: get the values from the peramiters and get the result of calling compute payment.
+                //compute: caculate the balance.
+                //output: display the result in the output label.
+                    let r = annualRate / periodsPerYear;
+                    let a = principal
+                    let p = computePayment(principal, annualRate, years, periodsPerYear)
+                    let d = numberOfPaymentPaidToDate
+                    let b = (a * (1 + r) ** d) - (p * ((1 + r) ** d - 1) / r)
+                    return b
+                }
+            </script>
+        </body>
+    </html>
