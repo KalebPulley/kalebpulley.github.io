@@ -58,7 +58,7 @@
                     let r = annualRate / periodsPerYear;
                     let n = periodsPerYear * years
                     let a = principal
-                    let p = (a*r)/(1-(1 + r)**(n* (- 1)))
+                    let p = (a*r)/(1-(1 + r)**(n * (- 1)))
                     return p
                     
                 }
@@ -70,7 +70,7 @@
                     let a = principal
                     let p = computePayment(principal, annualRate, years, periodsPerYear)
                     let d = numberOfPaymentPaidToDate
-                    let b = (a * (1 + r) ** d) - (p * ((1 + r) ** d - 1) / r)
+                    let b = (a * ((1 + r) ** d)) - ((p * ((1 + r) ** d - 1)) / r)
                     return b
                 }
             </script>
