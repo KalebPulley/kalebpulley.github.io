@@ -72,12 +72,19 @@
           */
             //input get the half way point
             let middle = list.length / 2;
+
+            //computing:
+            //set the value to store for later
             let result = 0;
+            //check for an ood or enve list
             if (list.length % 2 == 0) {
+                //result for even list
                 result = (list[middle] + list[middle - 1]) / 2;
             } else {
+                //result for odd list
                 result = list[(list.length - 1)/ 2];
             }
+            //Output: return the result
             return result;
         
       }
