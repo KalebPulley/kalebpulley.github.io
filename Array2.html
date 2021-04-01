@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <title>Week 13 - Arrays</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Week 13 - Arrays</h1>
+      <h2>Kaleb Pulley</h2>
+    </header>
+    <main>
+      <h3></h3>
+      <label><button onclick="test()">test</button></label>
+      <hr />
+      <div><span id="output"></span></div>
+    </main>
+    <footer>
+      &copy;2021 &bull; Kaleb Pulley &bull; BYU-Idaho &bull; CIT 160
+    </footer>
+    <script>
+      /* Defining Table
+       * Input: no user input
+       * Processing: Test the countEvens and multiply functions by calling them.
+       * Output: The values returned from the countEvens and multiply functions.
+       */
+      function test() {
+        let list1 = [17, 8, 9, 5, 20];
+        let list2 = [12, 4, 8, 15, 17, 5, 20, 11];
+
+        // Test the countEvens function by calling it two times.
+        let count1 = countEvens(list1);
+        let count2 = countEvens(list2);
+
+        // Test the multiply function by calling it two times.
+        let mult1 = multiply(list1, 3);
+        let mult2 = multiply(list2, 4);
+
+        // Build a string to display to the user.
+        let output = count1 + "<br>" + count2 + "<br>" + mult1 + "<br>" + mult2;
+
+        // Display the output string for the user to see.
+        document.getElementById("output").innerHTML = output;
+      }
+      /* 
+      Input: a list as one of the paramiters
+      Processing: for each item in the list use moldus to find if it is even, increase a counter by one if it is.
+      Output: return the counter after completing the loop.
+      */
+      function countEvens(list) {
+          let counter = 0
+          //loop through the list
+          for (let i = 0; i < list.length; i++) {
+            //check if the value is even
+            if (list[i] % 2 == 0) {
+                counter ++
+            }
+          }
+          //return the value
+          return counter
+      }
+      /* 
+      Input: a list and a number to multiply each value by as the paramiters.
+      Processing: for each item in the list multipy by the multiplyer and add to a new list.
+      Output: return the new list after completing the loop.
+      */
+      function multiply(list, multiplier) {
+          let newList = new Array(list.length)
+          //loop through the list
+          for (let i = 0; i < list.length; i++) {
+              //multiply and add to the new list
+              newList[i] = list[i] * multiplier
+          } 
+          //return the list
+          return newList
+      }
+    </script>
+  </body>
+</html>
